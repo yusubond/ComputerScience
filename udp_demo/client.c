@@ -5,31 +5,33 @@
 int main(int argc, char const *argv[])
 {
   int sockfd;
-  char buf[MAX_BUFFER_SIZE] = "hello UDP!";
+  char buf[MAX_BUFFER_SIZE] = "Hello UDP!";
   char read_buf[MAX_BUFFER_SIZE];
   struct sockaddr_in server, ser;
   int rv;
   socklen_t length,len;
 
   bzero(read_buf, MAX_BUFFER_SIZE);
+  bzero(&server, sizeof(server));
+  len = sizeof(ser);
+  length = sizeof(server);
 
-  sockfd = socket(AF_INET,SOCK_DGRAM, 0);
-  if(sockfd < 0)
+  //sockfd = socket(AF_INET,SOCK_DGRAM, 0);
+  if((sockfd = socket(AF_INET,SOCK_DGRAM, 0)) < 0)
   {
     perror("Create socket fail!\n");
     return -1;
   }
 
 
-  bzero(&server, sizeof(server));
   server.sin_family = AF_INET;
   server.sin_port = htons(8888);
   inet_pton(AF_INET, "10.103.14.28", &server.sin_addr.s_addr);
 
-  length = sizeof(server);
+
   sendto(sockfd, buf, strlen(buf), 0, (struct sockaddr *)&server, length);
 
-  len = sizeof(ser);
+
   rv = recvfrom(sockfd, read_buf, MAX_BUFFER_SIZE, 0, (struct sockaddr *)&ser, &len);
   if(rv < 0)
   {
