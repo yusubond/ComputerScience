@@ -8,7 +8,7 @@ Time:5/24 2016
 Function:创建udp协议的ipv4地址结构的套接字
 Author:subond
 Time :6/7 2016
- /*/
+*/
 int udp_creat_socket(void)
 {
   int listenfd;
@@ -36,7 +36,7 @@ Function:消息处理函数，实现消息回传
 Author: subond
 Time :6/7 2016
 */
-int udp_msg_process(int sockfd)
+int udp_msg_process_serv(int sockfd)
 {
   struct sockaddr_in addrcli;
   socklen_t lencli;
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
   listenfd=udp_creat_socket();
   while (1)
   {
-    udp_msg_process(listenfd);
+    udp_msg_process_serv(listenfd);
   }
   close(listenfd);
   return 0;

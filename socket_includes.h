@@ -13,5 +13,5 @@
 
 
 #define MAX_LISTEN_QUE 5
-#define SERV_PORT 8888
+#define SERV_PORT 8546
 #define MAX_BUFFER_SIZE 100
