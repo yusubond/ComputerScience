@@ -60,44 +60,32 @@ int udp_msg_process_serv(int sockfd)
   memset(send_buf, 0x00, MAX_BUFFER_SIZE);
   memset(read_buf, 0x00, MAX_BUFFER_SIZE);
 }
-
-//static void *msg_func(void *);
+/*
+Name:线程处理函数
+Function:1)创建udp套接字，并开启监听模式，阻塞在recvfrom函数
+Author:subond
+TIme:6/14 2016
+*/
 void *msg_func(void *arg)
 {
-  int fd;
-  fd = *((int *)arg);
-  free(arg);
-  int deid;
-  printf("*******msg_func********\n");
-  deid=pthread_detach(pthread_self());
-  printf("pthread id for pthread_self: %lu\n", pthread_self());
-  printf("id of pthread_detach: %d\n", deid);
-  udp_msg_process_serv(fd);
-  close(fd);
+  int listenfd;
+  listenfd=udp_creat_socket();
+  printf("Socket id: %d\n", listenfd);
+  while(1)
+  {
+    udp_msg_process_serv(listenfd);
+  }
+  close(listenfd);
   return(NULL);
 }
-/*
-Function:创建线程
-Author:subond
-Time: 6/14 2016
-*/
-int su_pthread_create(pthread_t *tid, pthread_attr_t *attr, void *(func)(void *), void *arg)
-{
-  
-}
+
 int main(int argc, char *argv[])
 {
-  int listenfd;
-  int *iptr;
   pthread_t tid;  //unsigned long int
   void *ret;
 
   int pcreate_id;
-
-  iptr=malloc(sizeof(int));
-  *iptr=udp_creat_socket();
-  printf("sockfd: %d\n", *iptr);
-  pcreate_id=pthread_create(&tid, NULL, &msg_func, iptr);
+  pcreate_id=pthread_create(&tid, NULL, &msg_func, NULL);
   if(pcreate_id != 0)
   {
     printf("Create pthread error!\n");
@@ -107,17 +95,6 @@ int main(int argc, char *argv[])
   printf("pcreate id for create: %d, pthread_create() success!\n", pcreate_id);
 
   pthread_join(tid, &ret);
-  printf("The thread return value is %d\n", (int)ret);
 
-
-  //创建套接字
-  //listenfd=udp_creat_socket();
-  /*
-  while (1)
-  {
-    udp_msg_process_serv(listenfd);
-  }
-  close(listenfd);
   return 0;
-  */
 }
