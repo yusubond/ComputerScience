@@ -5,7 +5,7 @@
 int main(int argc, char const *argv[])
 {
   int sockfd;
-  char buf[MAX_BUFFER_SIZE] = "Hello UDP!";
+  char buf[MAX_BUFFER_SIZE] = "Hello UDP! from the ip 10.103.14.28";
   char read_buf[MAX_BUFFER_SIZE];
   struct sockaddr_in server, ser;
   int rv;
@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 
 
   server.sin_family = AF_INET;
-  server.sin_port = htons(8888);
+  server.sin_port = htons(1234);
   inet_pton(AF_INET, "10.103.14.28", &server.sin_addr.s_addr);
 
 

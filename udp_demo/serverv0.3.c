@@ -52,7 +52,7 @@ int udp_msg_process_serv(int sockfd)
     return -1;
   }
   inet_ntop(AF_INET, &addrcli.sin_addr.s_addr, str, sizeof(str));
-  printf("size of buf_client: %ld\n", rv);
+//  printf("size of buf_client: %ld\n", rv);
   printf("client buf:%s\n", read_buf);
   printf("client IP: %s, Port: %d\n", str, ntohs(addrcli.sin_port));
   sendto(sockfd, read_buf, sizeof(read_buf), 0, (struct sockaddr *)&addrcli, lencli);
@@ -91,8 +91,8 @@ int main(int argc, char *argv[])
     printf("Create pthread error!\n");
     return 1;
   }
-  printf("pthread id for create: %lu\n", tid);
-  printf("pcreate id for create: %d, pthread_create() success!\n", pcreate_id);
+//  printf("pthread id for create: %lu\n", tid);
+//  printf("pcreate id for create: %d, pthread_create() success!\n", pcreate_id);
 
   pthread_join(tid, &ret);
 
