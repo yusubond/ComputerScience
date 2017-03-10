@@ -1,19 +1,25 @@
-#include <sys/types.h>
+#include <pthread.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <sys/types.h>
 #include <unistd.h>
-int value = 5;
+#include <sys/wait.h>
+int value = 0;
+void *runner(void *param) {
+  value = 5;
+  pthread_exit(0);
+}
 int main() {
-  for(int i = 0; i < 3; i++) {
-    //printf("ID : %d MY MAIN PID: %d\n", i, getpid());
-    pid_t fpid = fork();
-    if(fpid < 0)
-      printf("error in fork()\n");
-    else if(fpid == 0) {
-      printf("CHILD\n");
-    } else if(fpid > 0) {
-      printf("PARENT\n");
-      printf("\n");
-    }
+  int pid;
+  pthread_t tid;
+  pthread_attr_t attr;
+  pid = fork();
+  if(pid == 0) {
+    pthread_attr_init(&attr);
+    int id = pthread_create(&tid, &attr, runner, NULL);
+    pthread_join(tid, NULL);
+    printf("CHILD: value = %d\n", value);
+  } else if(pid > 0) {
+    wait(NULL);
+    printf("PARENT: value = %d\n", value);
   }
 }
