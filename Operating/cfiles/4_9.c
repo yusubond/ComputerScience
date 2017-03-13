@@ -1,3 +1,8 @@
+/*
+*Author:subond
+* Time: 2017-03-10
+* Function: 用户在命令行输入一个数字，然后创建一个独立线程来输出小于或等于输入数的所有素数
+*/
 #include <pthread.h>
 #include <stdio.h>
 #include <sys/types.h>
