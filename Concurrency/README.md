@@ -1,4 +1,3 @@
-## 并发编程
+## Linux POSIX线程
 
-书籍：[《C++并发编程》](c++_concurrency_in_action.pdf)  
-作者仓库：https://github.com/xiaoweiChen/Cpp_Concurrency_In_Action
+Linux是以一种"多进程单线程"的操作系统，只有进程的概念，Linux系统中称为“任务(task)”，其所谓的”线程“本质上在内核里是进程。
