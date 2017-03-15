@@ -4,7 +4,7 @@
 
 ## 操作系统
 
-![操作系统学习笔记](Operating/README.md)
+[操作系统学习笔记](Operating/README.md)
 
 + [进程管理](Operating/ProcessManagement.md)
 + [线程管理](Operating/ThreadManagement.md)
@@ -13,4 +13,4 @@
 
 ## 并发编程
 
-![C++并发编程](Concurrency/README.md)
+[C++并发编程](Concurrency/README.md)
