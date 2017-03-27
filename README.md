@@ -7,7 +7,6 @@
 ## 操作系统
 
 * [操作系统学习笔记](Operating/README.md)
-
    + [进程管理](Operating/ProcessManagement.md)
    + [线程管理](Operating/ThreadManagement.md)
    + [CPU调度](Operating/CpuManagement.md)
