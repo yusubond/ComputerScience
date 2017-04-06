@@ -4,25 +4,20 @@
 
 操作系统学习，网络编程，并发编程
 
-## 操作系统
-
 * [操作系统学习笔记](Operating/README.md)
    + [进程管理](Operating/ProcessManagement.md)
    + [线程管理](Operating/ThreadManagement.md)
    + [CPU调度](Operating/CpuManagement.md)
    + [分布式协调](Operating/DFS_1.md)
 
-## 深入理解计算机系统
-
-* [并发编程](Concurrency/README.md)  
-   + [深入理解计算机系统之并发编程](01.md)  
+* [深入理解计算机系统](Concurrency/README.md)  
+   + [并发编程](01.md)  
    + [Linux POSIX编程](02.md)  
 
-## TCP/IP协议详解
-
-+ [TCP:传输控制协议](Operating/tcp1.md)
-+ [TCP的交互数据流](Operating/tcp2.md)
-+ [UDP:用户数据报协议](Operating/udp1.md)
+* [TCP/IP协议详解](Operating/README.md)
+   + [TCP:传输控制协议](Operating/tcp1.md)
+   + [TCP的交互数据流](Operating/tcp2.md)
+   + [UDP:用户数据报协议](Operating/udp1.md)
 
 * [分布式系统](DistributedSystem/README.md)
    + [分布式系统](DistributedSystem/DS01.md)
