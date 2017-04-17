@@ -18,7 +18,7 @@
    + [TCP:传输控制协议](Operating/tcp1.md)
    + [TCP的交互数据流](Operating/tcp2.md)
    + [UDP:用户数据报协议](Operating/udp1.md)
-   + [HTTP](Operating/http.md)
+   + [HTTP:超文本传输协议](Operating/http.md)
 
 * [分布式系统](DistributedSystem/README.md)
    + [分布式系统](DistributedSystem/DS01.md)
