@@ -10,7 +10,7 @@ fork()函数 **仅调用一次，却能够返回两次**。其返回值有三种
 
 子进程创建成功后，系统中出现两个完全相同的进程，**执行的先后顺序依系统的进程调度策略而不同**。在Ubuntu16.04中 **先执行父进程，再执行子进程**，如下图所示：
 
-![fork](image/fork.jpeg)
+![fork](http://on64c9tla.bkt.clouddn.com/Comput/fork.jpeg)
 
 实例1说明：
 
