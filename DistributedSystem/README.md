@@ -11,6 +11,3 @@
 + [分布式键值系统](DS03.md)
 + [分布式表格系统](DS04.md)
 + [分布式数据库](DS05.md)
-+ [Docker](DS07.md)
-+ [Docker网络实践](DS08.md)
-+ [Network Namespace](DS09.md)
