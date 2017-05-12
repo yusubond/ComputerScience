@@ -12,4 +12,6 @@
 + [Linux:network namespace](D03.md)
 + [Docker系统框架](D04.md)
 + [Docker数据管理](D05.md)
-+ [Docker:Swarm集群](D06.md)
++ [Swarm集群:服务部署](D06.md)
++ [Swarm集群:服务回滚](D07.md)
++ [Swarm集群:工作原理](D08.md)
