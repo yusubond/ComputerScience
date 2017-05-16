@@ -36,3 +36,4 @@
    + [Swarm集群:服务部署](Docker/D06.md)
    + [Swarm集群:服务回滚](Docker/D07.md)
    + [Swarm进阶:创建Swarm](Docker/D09.md)
+   + [Swarm进阶:服务部署](Docker/D10.md)
