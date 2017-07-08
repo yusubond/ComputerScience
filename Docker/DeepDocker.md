@@ -44,3 +44,27 @@ $ service docker start
 # 添加环境变量
 $ exprot DOCKER_HOST="tcp://<HOST_IP>:2375"
 ```
+
+相关阅读：[Docker技术：认识Docker](D01.md)
+
+### 镜像拷贝与加载
+
+当我们构建完成镜像后，既可以通过DockerHub进行共享，也可以使用Docker本身的拷贝和加载功能。其主要命令包括`docker save`和`docker load`。
+
+```
+# 保存镜像
+$ docker save -o /path/to/images_tar <IMAGE_NAME>
+
+# 加载镜像
+$ docker load -i /path/to/images_tar
+```
+
+### Dockerfile
+
++ The Big Picture
+
++ Dockerfile Basics
+
++ Creating a Dockerfile
+
++ Building from a Dockerfile
