@@ -1,6 +1,6 @@
 ## UDP:用户数据报协议
 
-UDP是一个简单的面向数据包的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。
+UDP是一个简单的面向数据报的传输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。
 
 ![udp-package](http://on64c9tla.bkt.clouddn.com/Comput/udp-package.png)
 
